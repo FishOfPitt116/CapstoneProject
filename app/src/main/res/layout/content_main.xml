@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="fhscapstone.fisheltestapp.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="400dp"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:text="Starting Lineup Analyzer"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/newTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Team"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="139dp" />
+
+    <Button
+        android:id="@+id/loadTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Team"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+</android.support.constraint.ConstraintLayout>
