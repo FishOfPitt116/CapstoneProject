@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Team {
     private String name;
+    private Coach coach;
     private Player[] roster;
 
     public Team(String n, Player[] r) {
@@ -35,4 +36,7 @@ public class Team {
     }
     // 2d array input should have each player with their own row, and then each stat with their own column
 
+    public String getCoachName () {
+        return coach.getCoachName();
+    }
 }
