@@ -7,6 +7,11 @@ public class Team {
     private Coach coach;
     private Player[] roster;
 
+    public Team(String n, Coach c) {
+        name = n;
+        coach = c;
+    }
+
     public Team(String n, Player[] r) {
         name = n;
         roster = r;

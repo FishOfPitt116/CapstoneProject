@@ -15,4 +15,11 @@ public class Coach {
         return coachName;
     }
 
+    public void fillStat(boolean isIdeal, int pos, int stat) {
+        if (isIdeal)
+            idealStats[pos][0] = stat;
+        else
+            idealStats[pos][1] = stat;
+    }
+
 }
