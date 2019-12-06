@@ -15,8 +15,8 @@ public class Coach {
         return coachName;
     }
 
-    public void fillStat(boolean isIdeal, int pos, int stat) {
-        if (isIdeal)
+    public void fillStat(boolean isPrimary, int pos, int stat) {
+        if (isPrimary)
             idealStats[pos][0] = stat;
         else
             idealStats[pos][1] = stat;

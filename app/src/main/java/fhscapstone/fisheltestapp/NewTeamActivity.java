@@ -74,19 +74,19 @@ public class NewTeamActivity extends AppCompatActivity {
             }
         });
 
-        Spinner[] ch = new Spinner[10];
-        ch[0] = (Spinner) findViewById(R.id.primaryPgStat);
-        ch[1] = (Spinner) findViewById(R.id.secondaryPgStat);
-        ch[2] = (Spinner) findViewById(R.id.primarySgStat);
-        ch[3] = (Spinner) findViewById(R.id.secondarySgStat);
-        ch[4] = (Spinner) findViewById(R.id.primarySfStat);
-        ch[5] = (Spinner) findViewById(R.id.secondarySfStat);
-        ch[6] = (Spinner) findViewById(R.id.primaryPfStat);
-        ch[7] = (Spinner) findViewById(R.id.secondaryPfStat);
-        ch[8] = (Spinner) findViewById(R.id.primaryCStat);
-        ch[9] = (Spinner) findViewById(R.id.secondaryCStat);
 
-        Coach newCoach = new Coach(coachName.getText().toString(), new int[2][5]);
+        Spinner primaryPgStat = (Spinner) findViewById(R.id.primaryPgStat);
+        Spinner secondaryPgStat = (Spinner) findViewById(R.id.secondaryPgStat);
+        Spinner primarySgStat = (Spinner) findViewById(R.id.primarySgStat);
+        Spinner secondarySgStat = (Spinner) findViewById(R.id.secondarySgStat);
+        Spinner primarySfStat = (Spinner) findViewById(R.id.primarySfStat);
+        Spinner secondarySfStat = (Spinner) findViewById(R.id.secondarySfStat);
+        Spinner primaryPfStat = (Spinner) findViewById(R.id.primaryPfStat);
+        Spinner secondaryPfStat = (Spinner) findViewById(R.id.secondaryPfStat);
+        Spinner primaryCStat = (Spinner) findViewById(R.id.primaryCStat);
+        Spinner secondaryCStat = (Spinner) findViewById(R.id.secondaryCStat);
+
+        final Coach newCoach = new Coach(coachName.getText().toString(), new int[2][5]);
         int i = 0;
         while (i >= 9) {
             ArrayList<String> a = new ArrayList<String>();
@@ -98,15 +98,83 @@ public class NewTeamActivity extends AppCompatActivity {
             a.add("Turnovers");
             ArrayAdapter<String> r = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, a);
             r.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ch[i].setAdapter(r);
-            ch[i].setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+            primaryPgStat.setAdapter(r);
+            secondaryPgStat.setAdapter(r);
+            primarySgStat.setAdapter(r);
+            secondarySgStat.setAdapter(r);
+            primarySfStat.setAdapter(r);
+            secondarySfStat.setAdapter(r);
+            primaryPfStat.setAdapter(r);
+            secondaryPfStat.setAdapter(r);
+            primaryCStat.setAdapter(r);
+            secondaryCStat.setAdapter(r);
+            primaryPgStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(true, 0, position+2);
+                }
+            });
+
+            secondaryPgStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(false, 0, position+2);
+                }
+            });
+            primarySgStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(true, 1, position+2);
+                }
+            });
+
+            secondarySgStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(false, 1, position+2);
+                }
+            });
+
+            primarySfStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(true, 2, position+2);
+                }
+            });
+
+            secondarySfStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(false, 2, position+2);
+                }
+            });
+
+            primaryPfStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(true, 3, position+2);
+                }
+            });
+
+            secondaryPfStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(false, 3, position+2);
+                }
+            });
+
+            primaryCStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(true, 4, position+2);
+                }
+            });
+
+            secondaryCStat.setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    newCoach.fillStat(false, 4, position+2);
+                }
+            });
+            //ch[i].setAdapter(r);
+            /*ch[i].setOnItemSelectedListener(new AdapterView.onItemSelectedListener() {
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                    int selection = position;
                    //FIGURE OUT HOW TO ASSIGN THIS STAT TO COACH
                    }
                });
 
-            }
+            }*/
 
         }
 
