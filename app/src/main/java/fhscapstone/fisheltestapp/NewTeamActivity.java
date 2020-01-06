@@ -18,6 +18,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class NewTeamActivity extends AppCompatActivity {
+
+    static Team newTeam;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_team_activity);
@@ -64,7 +67,7 @@ public class NewTeamActivity extends AppCompatActivity {
         created.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-                startActivity(new Intent(NewTeamActivity.this, /* */));
+                startActivity(new Intent(NewTeamActivity.this, TeamHomeActivity.class));
             }
         });
         backToTitle.setOnClickListener(new View.OnClickListener() {
@@ -187,7 +190,11 @@ public class NewTeamActivity extends AppCompatActivity {
         TextView prim = (TextView) findViewById(R.id.prim);
         TextView sec = (TextView) findViewById(R.id.sec);
 
-        Team newTeam = new Team(teamName.getText().toString(), newCoach);
+        newTeam = new Team(teamName.getText().toString(), newCoach);
 
+    }
+
+    public Team sendTeam () {
+            return newTeam;
     }
 }
