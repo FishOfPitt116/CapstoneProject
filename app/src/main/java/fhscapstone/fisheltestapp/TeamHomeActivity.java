@@ -32,6 +32,7 @@ public class TeamHomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        infoScreen();
     }
 
     @Override
@@ -59,5 +60,13 @@ public class TeamHomeActivity extends AppCompatActivity {
     public void infoScreen() {
         TextView nameTitle = (TextView) findViewById(R.id.nameTitle);
         nameTitle.setText(NewTeamActivity.newTeam.getName());
+        TextView player1 = (TextView) findViewById(R.id.player1);
+        TextView player2 = (TextView) findViewById(R.id.player2);
+        TextView player3 = (TextView) findViewById(R.id.player3);
+        TextView player4 = (TextView) findViewById(R.id.player4);
+        player1.setText(NewTeamActivity.newTeam.); //algorithm to determine best performing player
+        player2.setText(NewTeamActivity.newTeam.); //algorithm to determine second best performing player
+        player3.setText(NewTeamActivity.newTeam.); //algorithm to determine second worst performing player
+        player4.setText(NewTeamActivity.newTeam.); //algorithm to determine worst performing player
     }
 }

@@ -1,5 +1,7 @@
 package fhscapstone.fisheltestapp;
 
+import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
 import java.util.Arrays;
 
 public class Team {
@@ -44,4 +46,5 @@ public class Team {
     public String getCoachName () {
         return coach.getCoachName();
     }
+
 }
